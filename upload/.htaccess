@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "upload on fez"
+AuthBasicProvider "ldap"
+AuthLDAPURL "ldap://directory.education.ucsb.edu/o=education.ucsb.edu"
+Require valid-user
