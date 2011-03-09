@@ -31,9 +31,9 @@ function link_file($file) {
 }
 
 ?><!doctype html>
-    <title>ITG uploader</title>
+    <title>xfer</title>
     <link rel="stylesheet" href="style.css?<?= time() ?>" type="text/css" />
-    <h1>ITG uploader</h1>
+    <h1>xfer</h1>
     <?= $error; ?>
     <? if ( $success ) { ?>
     <p><strong><?= $uploadedfile['name'] ?></strong>: <?= $uploadedfile['size'] ?> bytes of type <?= $uploadedfile['type'] ?> uploaded
