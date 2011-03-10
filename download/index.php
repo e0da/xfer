@@ -1,6 +1,6 @@
 <?php
 
-$file = '/var/www/share/'.$_REQUEST['file'];
+$file = '../share/'.$_REQUEST['file'];
 
 if (file_exists($file)) {
 	header('Content-Description: File Transfer');
@@ -20,4 +20,4 @@ else {
 	header('HTTP/1.0 404 Not Found');
 	print 'File not found.';
 }
-?>
+
