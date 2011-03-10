@@ -1,3 +1,6 @@
+Allow From All
+Satisfy Any
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

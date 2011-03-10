@@ -1,0 +1,9 @@
+Allow from All
+Satisfy Any
+
+RewriteEngine On
+RewriteBase /xfer
+RewriteRule ^$ ../xfer [R]
+
+Options -Indexes
+
