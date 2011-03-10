@@ -22,6 +22,7 @@ function hsize($size) {
 function link_file($file) {
   global $share_path;
   $text = basename($file);
+  if ($text == '.htaccess') return ''; // don't link .htaccess files
   $download = 'download/'.$text;
   $size = filesize($share_path.$file);
   $link = '<tr><td><a href="'.$download.'" title="Open file">'.$text.'</a></td><td style="text-align:center;width:20px"><a href="'.$download
