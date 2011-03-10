@@ -22,10 +22,9 @@ function hsize($size) {
 function link_file($file) {
   global $share_path;
   $text = basename($file);
-  $href = 'share/'.$text;
   $download = 'download/'.$text;
   $size = filesize($share_path.$file);
-  $link = '<tr><td><a href="'.$href.'" title="Open file">'.$text.'</a></td><td style="text-align:center;width:20px"><a href="'.$download
+  $link = '<tr><td><a href="'.$download.'" title="Open file">'.$text.'</a></td><td style="text-align:center;width:20px"><a href="'.$download
     .'" title="Save file">&darr;</a></td><td style="text-align:right">'.hsize($size).'</td></tr>';
   return $link;
 }
