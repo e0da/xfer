@@ -2,13 +2,21 @@
 
 ob_start();
 
-$uploadedfile = $_FILES['uploadedfile'];
+$uploaded_file = $_FILES['uploaded_file'];
 
 $share_path = 'share/';
 
-if ($uploadedfile) {
-  $target_path = $share_path.basename(str_replace(' ','_',$uploadedfile['name']));
-  $success = move_uploaded_file($uploadedfile['tmp_name'], $target_path);
+$sanitized_name = sanitize_name($uploaded_file['name']);
+
+if ($uploaded_file) {
+  $target_path = $share_path.basename($sanitized_name);
+  $success = move_uploaded_file($uploaded_file['tmp_name'], $target_path);
+}
+
+function sanitize_name($file_name) {
+  $file_name = str_replace(' ', '_', $file_name);
+  $file_name = preg_replace('/(\.php\d?)$/', '$1.txt', $file_name); //append .txt to .php, .php5, etc.
+  return $file_name;
 }
 
 function hsize($size) {
@@ -36,13 +44,13 @@ function link_file($file) {
     <h1>xfer</h1>
     <?= $error; ?>
     <? if ( $success ) { ?>
-    <p><strong><?= $uploadedfile['name'] ?></strong>: <?= $uploadedfile['size'] ?> bytes of type <?= $uploadedfile['type'] ?> uploaded
+    <p><strong><?= $sanitized_name ?></strong>: <?= $uploaded_file['size'] ?> bytes of type <?= $uploaded_file['type'] ?> uploaded
     <? } ?>
     <form enctype="multipart/form-data" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
       <fieldset>
         <legend>Upload a file</legend>
         <p class="darkred">Caution: If you upload a file with the same name, your new file will overwrite the old one!
-        <p><input name="uploadedfile" type="file" /> <input type="submit" value="Upload" />
+        <p><input name="uploaded_file" type="file" /> <input type="submit" value="Upload" />
       </fieldset>
     </form>
 
