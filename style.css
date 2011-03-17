@@ -1,6 +1,8 @@
 body {
 	font-family:sans-serif;
 	font-size:12px;
+  background:url(xfer.png) no-repeat top right;
+  margin-top:26px;
 }
 
 h1 {

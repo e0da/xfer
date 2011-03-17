@@ -40,6 +40,7 @@ function link_file($file) {
 
 ?><!doctype html>
     <title>xfer</title>
+    <link rel="icon" type="image/png" href="xfer.png" />
     <link rel="stylesheet" href="style.css?<?= time() ?>" type="text/css" />
     <h1>xfer</h1>
     <?= $error; ?>
