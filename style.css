@@ -48,3 +48,8 @@ legend {
 	font-size: 14px;
 	font-weight: bold;
 }
+
+footer {
+  display:block;
+  color:#bbb;
+}

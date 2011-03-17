@@ -39,19 +39,21 @@ function link_file($file) {
 }
 
 ?><!doctype html>
+
 <title>xfer</title>
-<link rel="icon" type="image/png" href="xfer.png" />
-<link rel="stylesheet" href="style.css?<?= time() ?>" type="text/css" />
+<link rel=icon type=image/png href=xfer.png>
+<link rel=stylesheet href=style.css?<?= time() ?>>
+<meta charset=utf-8>
 <h1>xfer</h1>
 <?= $error; ?>
 <? if ( $success ) { ?>
 <p><strong><?= $sanitized_name ?></strong>: <?= $uploaded_file['size'] ?> bytes of type <?= $uploaded_file['type'] ?> uploaded
 <? } ?>
-<form enctype="multipart/form-data" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+<form enctype=multipart/form-data action=<?= $_SERVER['PHP_SELF'] ?> method=post>
   <fieldset>
     <legend>Upload a file</legend>
-    <p class="darkred">Caution: If you upload a file with the same name, your new file will overwrite the old one!
-    <p><input name="uploaded_file" type="file" /> <input type="submit" value="Upload" />
+    <p class=darkred>Caution: If you upload a file with the same name, your new file will overwrite the old one!
+    <p><input name=uploaded_file type=file> <input type=submit value=Upload>
   </fieldset>
 </form>
 
@@ -72,4 +74,6 @@ if ($handle = opendir($share_path)) {
 ?>
 
 </table>
+
+<footer>Copyright © 2011 by the UC Regents</footer>
 
