@@ -1,3 +1,7 @@
+@import url(yui3.reset.css);
+@import url(yui3.base.css);
+@import url(yui3.fonts.css);
+
 body {
 	font-family: sans-serif;
 	font-size: 12px;
